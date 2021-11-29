@@ -3,7 +3,6 @@
 0J02017 野村勇太
 """
 import time
-import math
 
 #開始時間
 start_time = time.perf_counter()
@@ -12,11 +11,10 @@ def get_sosu(n):
     sosu = [True for i in range(n+1)]
     sosu[0] = False
     sosu[1] = False
-    sqrt_n = math.ceil(math.sqrt(n))
-    for i in range(2, sqrt_n):
+    for i in range(2, n+1):
         if sosu[i]:
             for j in range(2*i, n+1, i):
-                sosu[j] = False
+                sosu[j] = False 
     return sosu
 
 #変数初期化
